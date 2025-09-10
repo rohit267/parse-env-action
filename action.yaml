@@ -1,7 +1,7 @@
 name: "Extract ENV Variables from PR Body"
 description:
-  "Extract KEY=VALUE pairs from a specified markdown code block in a pull
-  request body and set them as outputs for use in subsequent steps."
+  "Extract KEY=VALUE pairs from a markdown code block in a PR body and set them
+  as outputs for later steps."
 author: "Rohit Mahto <rohit@champdev.me>"
 
 inputs:
