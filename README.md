@@ -1,7 +1,8 @@
 # Extract ENV Variables Action
 
-[![GitHub release](https://img.shields.io/github/v/release/rohit267/parse-env-action)](https://github.com/rohit267/parse-env-action/releases)
+[![GitHub release](https://img.shields.io/github/v/release/rohit267/parse-env-action-action)](https://github.com/rohit267/parse-env-action-action/releases)
 [![GitHub marketplace](https://img.shields.io/badge/marketplace-extract--env--variables-blue?logo=github)](https://github.com/marketplace/actions/extract-env-variables-from-pr-body)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A GitHub Action that extracts KEY=VALUE pairs from markdown code blocks in pull
 request bodies or any text input and makes them available as JSON output for use
@@ -10,7 +11,8 @@ in subsequent workflow steps.
 ## Features
 
 - 🔍 **Parse ENV blocks**: Extracts variables from ````ENV` markdown code blocks
-- 📝 **Multiple output formats**: Returns variables as a properly formatted `json`, `env`, `dotenv`, `shell`, or `yaml`
+- 📝 **Multiple output formats**: Returns variables as a properly formatted
+  `json`, `env`, `dotenv`, `shell`, or `yaml`
 - 🛡️ **Safe parsing**: Handles quotes, comments, and malformed lines gracefully
 - 🚀 **Easy integration**: Simple input/output interface for GitHub workflows
 - ✨ **Flexible**: Works with any text input, not just PR bodies
@@ -31,7 +33,7 @@ jobs:
     steps:
       - name: Extract ENV variables as JSON
         id: extract-env
-        uses: rohit267/parse-env@latest
+        uses: rohit267/parse-env-action@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: json # Optional, defaults to json
@@ -60,7 +62,7 @@ jobs:
     steps:
       - name: Extract as shell exports
         id: shell-vars
-        uses: rohit267/parse-env@latest
+        uses: rohit267/parse-env-action@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: shell
@@ -74,7 +76,7 @@ jobs:
 
       - name: Extract as dotenv for Docker
         id: dotenv-vars
-        uses: rohit267/parse-env@latest
+        uses: rohit267/parse-env-action@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: env
@@ -102,7 +104,7 @@ jobs:
 
       - name: Extract environment variables from PR body
         id: extract-env
-        uses: yourusername/parse-env@v1
+        uses: rohit267/parse-env-action@v1
         with:
           to-parse: ${{ github.event.pull_request.body }}
 
@@ -226,7 +228,7 @@ PORT: "3000"
 ```yaml
 - name: Extract variables as JSON
   id: vars
-  uses: rohit267/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: json
@@ -245,7 +247,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as env format
   id: vars
-  uses: rohit267/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: env
@@ -263,7 +265,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as shell exports
   id: vars
-  uses: rohit267/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: shell
@@ -282,7 +284,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as YAML
   id: vars
-  uses: rohit267/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: yaml
@@ -308,7 +310,7 @@ requests:
 
 ```yaml
 - name: Configure environment from PR
-  uses: yourusername/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
 ```
@@ -320,7 +322,7 @@ Enable/disable features based on PR specifications:
 ```yaml
 - name: Extract feature flags
   id: flags
-  uses: yourusername/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
 
@@ -337,7 +339,7 @@ Specify deployment parameters per PR:
 ```yaml
 - name: Get deployment config
   id: config
-  uses: yourusername/parse-env@v1
+  uses: rohit267/parse-env-action@v1
   with:
     to-parse: ${{ github.event.pull_request.body }}
 
@@ -396,13 +398,14 @@ for details.
 
 - Initial release
 - Support for extracting KEY=VALUE pairs from `ENV` blocks
-- JSON output format
+- Multiple output formats: JSON, ENV/DotEnv, Shell, YAML
 - Comprehensive error handling
+- MIT License included
 
 ## Support
 
 If you encounter any issues or have questions, please
-[open an issue](https://github.com/yourusername/parse-env/issues) on GitHub.
+[open an issue](https://github.com/rohit267/parse-env-action/issues) on GitHub.
 
 ---
 
