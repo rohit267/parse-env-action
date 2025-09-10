@@ -1,7 +1,7 @@
 # Extract ENV Variables Action
 
-[![GitHub release](https://img.shields.io/github/release/rohit267/parse-env.svg)](https://github.com/rohit267/parse-env/releases)
-[![GitHub marketplace](https://img.shields.io/badge/marketplace-extract--env--variables-blue?logo=github)](https://github.com/marketplace/actions/extract-env-variables)
+[![GitHub release](https://img.shields.io/github/v/release/rohit267/parse-env-action)](https://github.com/rohit267/parse-env-action/releases)
+[![GitHub marketplace](https://img.shields.io/badge/marketplace-extract--env--variables-blue?logo=github)](https://github.com/marketplace/actions/extract-env-variables-from-pr-body)
 
 A GitHub Action that extracts KEY=VALUE pairs from markdown code blocks in pull
 request bodies or any text input and makes them available as JSON output for use
