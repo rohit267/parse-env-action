@@ -1,0 +1,34 @@
+name: "Extract ENV Variables from PR Body"
+description:
+  "Extract KEY=VALUE pairs from a specified markdown code block in a pull
+  request body and set them as outputs for use in subsequent steps."
+author: "Rohit Mahto <rohit@champdev.me>"
+
+inputs:
+  to-parse:
+    description:
+      "The string containing the markdown code block to parse (e.g., ${{
+      github.event.pull_request.body }})."
+    required: true
+  output-format:
+    description:
+      "Output format for the variables. Supported: 'json' (default), 'env',
+      'dotenv', 'shell', 'yaml'"
+    required: false
+    default: "json"
+
+outputs:
+  VARS:
+    description: "A JSON string of the extracted key-value pairs."
+    value: ${{ steps.parse.outputs.VARS }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Parse block and set outputs
+      id: parse
+      run: ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        INPUT_TO_PARSE: ${{ inputs.to-parse }}
+        INPUT_OUTPUT_FORMAT: ${{ inputs.output-format }}
