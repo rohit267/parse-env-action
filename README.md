@@ -104,7 +104,7 @@ jobs:
 
       - name: Extract environment variables from PR body
         id: extract-env
-        uses: rohit267/parse-env-action@v1
+        uses: rohit267/parse-env-action@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
 
@@ -228,7 +228,7 @@ PORT: "3000"
 ```yaml
 - name: Extract variables as JSON
   id: vars
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: json
@@ -247,7 +247,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as env format
   id: vars
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: env
@@ -265,7 +265,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as shell exports
   id: vars
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: shell
@@ -284,7 +284,7 @@ PORT: "3000"
 ```yaml
 - name: Extract as YAML
   id: vars
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
     output-format: yaml
@@ -310,7 +310,7 @@ requests:
 
 ```yaml
 - name: Configure environment from PR
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
 ```
@@ -322,7 +322,7 @@ Enable/disable features based on PR specifications:
 ```yaml
 - name: Extract feature flags
   id: flags
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
 
@@ -339,7 +339,7 @@ Specify deployment parameters per PR:
 ```yaml
 - name: Get deployment config
   id: config
-  uses: rohit267/parse-env-action@v1
+  uses: rohit267/parse-env-action@latest
   with:
     to-parse: ${{ github.event.pull_request.body }}
 
