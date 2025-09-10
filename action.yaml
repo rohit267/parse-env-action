@@ -4,6 +4,11 @@ description:
   as outputs for later steps."
 author: "Rohit Mahto <rohit@champdev.me>"
 
+# Add the branding section
+branding:
+  icon: 'align-left'
+  color: 'blue'
+
 inputs:
   to-parse:
     description:
