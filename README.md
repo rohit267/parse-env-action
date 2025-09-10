@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Extract ENV variables as JSON
         id: extract-env
-        uses: rohit267/parse-env@v1
+        uses: rohit267/parse-env@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: json # Optional, defaults to json
@@ -60,7 +60,7 @@ jobs:
     steps:
       - name: Extract as shell exports
         id: shell-vars
-        uses: rohit267/parse-env@v1
+        uses: rohit267/parse-env@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: shell
@@ -74,7 +74,7 @@ jobs:
 
       - name: Extract as dotenv for Docker
         id: dotenv-vars
-        uses: rohit267/parse-env@v1
+        uses: rohit267/parse-env@latest
         with:
           to-parse: ${{ github.event.pull_request.body }}
           output-format: env
