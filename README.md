@@ -1,6 +1,6 @@
 # Extract ENV Variables Action
 
-[![GitHub release](https://img.shields.io/github/v/release/rohit267/parse-env-action-action)](https://github.com/rohit267/parse-env-action-action/releases)
+[![GitHub release](https://img.shields.io/github/v/release/rohit267/parse-env-action)](https://github.com/rohit267/parse-env-action/releases)
 [![GitHub marketplace](https://img.shields.io/badge/marketplace-extract--env--variables-blue?logo=github)](https://github.com/marketplace/actions/extract-env-variables-from-pr-body)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
